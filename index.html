@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHARMAR Studio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== Header ===== -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">SHARMAR<span>Studio</span></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Build Modern & Responsive Websites</h2>
+            <p>We design clean, fast, and mobile-friendly websites for your business.</p>
+            <a href="#services" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+
+        <div class="services-container">
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Web Design">
+                <h3>Web Design</h3>
+                <p>Beautiful and user-friendly designs using modern UI principles.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>HTML, CSS & JavaScript based fast and optimized websites.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8" alt="Responsive Design">
+                <h3>Responsive Design</h3>
+                <p>Perfect experience on mobile, tablet, and desktop devices.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="About Us">
+
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    SHARMAR Studio is a passionate web development team focused on
+                    delivering high-quality digital solutions. Our goal is to help
+                    businesses grow online with powerful and modern websites.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== Contact ===== -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <!-- ===== Footer ===== -->
+<footer class="footer">
+    <p>© 2026 SHARMAR Studio | All Rights Reserved</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61578888595931" target="_blank" class="social-icon">Facebook</a>
+        <a href="https://x.com/Umar_Raza12" target="_blank" class="social-icon">Twitter</a>
+        <a href="https://www.instagram.com/mur1292007/" target="_blank" class="social-icon">Instagram</a>
+        <a href="https://www.linkedin.com/in/muhammad-umar-raza-undefined-944439387/" target="_blank" class="social-icon">LinkedIn</a>
+    </div>
+</footer>
+
+<!-- ===== Internal CSS ===== -->
+<style>
+    .footer {
+        background-color: #111;
+        color: #fff;
+        text-align: center;
+        padding: 20px 10px;
+        position: relative;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 8px 12px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        background-color: #222;
+    }
+
+    .social-icon:hover {
+        background-color: #ff4c4c;
+        color: #fff;
+        transform: scale(1.1);
+    }
+</style>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init("sDpittntRwU0Oo1jW"); // replace with your Public Key / User ID
+
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // page reload nahi hoga
+
+    emailjs.sendForm('service_kixx5do', 'template_hk0h304', this)
+      .then(function() {
+        alert('Message sent successfully!');
+        form.reset(); // form clear ho jaye
+      }, function(error) {
+        console.error('EmailJS error:', error);
+        alert('Oops... something went wrong. Check console for details.');
+      });
+  });
+</script>
+
+</body>
+
+</html>
